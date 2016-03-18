@@ -28,6 +28,11 @@ public class OkHttpSingleton {
         return new Cache(cacheDir, cacheSize);
     }
 
+    /**
+     * Gets ok http client with enabled cache.
+     *
+     * @return the ok http client
+     */
     public static OkHttpClient getOkHttpClient() {
 
         if (okHttpClient == null) {

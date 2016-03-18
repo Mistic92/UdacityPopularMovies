@@ -19,12 +19,24 @@ public class DataBinder {
     private DataBinder() {
     }
 
+    /**
+     * Sets image url.
+     *
+     * @param imageView the image view
+     * @param url       the url
+     */
     @BindingAdapter("imageUrl")
     public static void setImageUrl(ImageView imageView, String url) {
         Context context = imageView.getContext();
         Glide.with(context).load(url).into(imageView);
     }
 
+    /**
+     * Format year.
+     *
+     * @param textView     the text view
+     * @param dateToFormat the date to format
+     */
     @BindingAdapter("formatYear")
     @DebugLog
     public static void formatYear(TextView textView, String dateToFormat) {
@@ -35,6 +47,12 @@ public class DataBinder {
         }
     }
 
+    /**
+     * Format rating.
+     *
+     * @param textView      the text view
+     * @param currentRating the current rating
+     */
     @BindingAdapter("formatRating")
     @DebugLog
     public static void formatRating(TextView textView, float currentRating) {

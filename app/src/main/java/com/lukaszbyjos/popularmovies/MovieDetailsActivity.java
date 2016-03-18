@@ -16,11 +16,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * The type Movie details activity.
+ */
 public class MovieDetailsActivity extends AppCompatActivity {
 
     public static final String MOVIE_ID = "MOVIE_ID";
-
-    private ActivityMovieDetailsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     @DebugLog
     private void bindData(MovieDetails movieDetails) {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
+        ActivityMovieDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
         movieDetails.setPosterPath(
                 MovieUtils.correctPosterURL(movieDetails.getPosterPath(), PosterSizes.W185));
         binding.setMovie(movieDetails);
