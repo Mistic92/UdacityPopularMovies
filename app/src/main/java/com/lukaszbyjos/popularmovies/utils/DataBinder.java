@@ -34,4 +34,12 @@ public class DataBinder {
             textView.setText(dateToShow);
         }
     }
+
+    @BindingAdapter("formatRating")
+    @DebugLog
+    public static void formatRating(TextView textView, float currentRating) {
+        if (currentRating != 0.0) {
+            textView.setText(currentRating + "/10");
+        }
+    }
 }

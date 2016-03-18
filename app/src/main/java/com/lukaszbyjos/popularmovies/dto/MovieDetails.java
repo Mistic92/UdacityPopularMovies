@@ -90,7 +90,7 @@ public class MovieDetails {
     @JsonProperty("video")
     private boolean video;
     @JsonProperty("vote_average")
-    private double voteAverage;
+    private float voteAverage;
     @JsonProperty("vote_count")
     private int voteCount;
     @JsonIgnore
@@ -468,7 +468,7 @@ public class MovieDetails {
      * @return The voteAverage
      */
     @JsonProperty("vote_average")
-    public double getVoteAverage() {
+    public float getVoteAverage() {
         return voteAverage;
     }
 
@@ -476,7 +476,7 @@ public class MovieDetails {
      * @param voteAverage The vote_average
      */
     @JsonProperty("vote_average")
-    public void setVoteAverage(double voteAverage) {
+    public void setVoteAverage(float voteAverage) {
         this.voteAverage = voteAverage;
     }
 

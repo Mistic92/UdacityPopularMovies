@@ -31,8 +31,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
         final int movieId = intent.getIntExtra(MOVIE_ID, -1);
         if (movieId > -1) {
             getTopRatedMovies(movieId);
-            binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
-
         }
 
     }
@@ -56,6 +54,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     @DebugLog
     private void bindData(MovieDetails movieDetails) {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
         movieDetails.setPosterPath(
                 MovieUtils.correctPosterURL(movieDetails.getPosterPath(), PosterSizes.W185));
         binding.setMovie(movieDetails);

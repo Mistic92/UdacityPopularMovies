@@ -17,4 +17,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="movieDetails">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/movieDetailsText</item>
+    </style>
+
+    <style name="movieDetailsYearStyle" parent="movieDetails">
+        <item name="android:textSize">23sp</item>
+    </style>
+
+    <style name="movieDetailsDurationStyle" parent="movieDetails">
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
 </resources>
