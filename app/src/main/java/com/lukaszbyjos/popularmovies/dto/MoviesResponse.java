@@ -12,7 +12,7 @@ public class MoviesResponse {
     @JsonProperty("page")
     private int pageNumber;
     @JsonProperty("results")
-    private List<Movie> movieList;
+    private List<MovieMain> movieMainList;
     @JsonProperty("total_results")
     private int totalResults;
     @JsonProperty("total_pages")
@@ -27,11 +27,11 @@ public class MoviesResponse {
         this.pageNumber = pageNumber;
     }
 
-    public List<Movie> getMovieList() {
-        return movieList;
+    public List<MovieMain> getMovieMainList() {
+        return movieMainList;
     }
 
-    public void setMovieList(List<Movie> movieList) {
-        this.movieList = movieList;
+    public void setMovieMainList(List<MovieMain> movieMainList) {
+        this.movieMainList = movieMainList;
     }
 }

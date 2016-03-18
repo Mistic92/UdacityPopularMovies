@@ -1,6 +1,6 @@
 package com.lukaszbyjos.popularmovies.utils;
 
-import com.lukaszbyjos.popularmovies.dto.Movie;
+import com.lukaszbyjos.popularmovies.dto.MovieMain;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,24 +9,24 @@ import java.util.List;
  * Created by Lukasz on 18.03.2016.
  */
 public class MoviesSingleton {
-    private static List<Movie> movieList = Collections.emptyList();
+    private static List<MovieMain> movieMainList = Collections.emptyList();
 
     private MoviesSingleton() {
     }
 
-    public static Movie getMovieItem(final int index) {
-        return movieList.get(index);
+    public static MovieMain getMovieItem(final int index) {
+        return movieMainList.get(index);
     }
 
     public static int getItemCounts() {
-        return movieList.size();
+        return movieMainList.size();
     }
 
-    public static List<Movie> getMovieList() {
-        return movieList;
+    public static List<MovieMain> getMovieMainList() {
+        return movieMainList;
     }
 
-    public static void setMovieList(List<Movie> movieList) {
-        MoviesSingleton.movieList = movieList;
+    public static void setMovieMainList(List<MovieMain> movieMainList) {
+        MoviesSingleton.movieMainList = movieMainList;
     }
 }

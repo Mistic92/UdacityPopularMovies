@@ -1,6 +1,7 @@
 package com.lukaszbyjos.popularmovies.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +11,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.lukaszbyjos.popularmovies.MovieDetailsActivity;
 import com.lukaszbyjos.popularmovies.R;
-import com.lukaszbyjos.popularmovies.dto.Movie;
+import com.lukaszbyjos.popularmovies.dto.MovieMain;
 import com.lukaszbyjos.popularmovies.utils.MoviesSingleton;
 
 import butterknife.Bind;
@@ -37,16 +39,19 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Movie movie = MoviesSingleton.getMovieItem(position);
+        final MovieMain movieMain = MoviesSingleton.getMovieItem(position);
         Glide.with(mContext)
-                .load(Uri.parse(movie.getPosterPath()))
+                .load(Uri.parse(movieMain.getPosterPath()))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.movieImageView);
         holder.setClickListener(new ViewHolder.ClickListener() {
 
             @Override
             public void onClick(View v, int position) {
-                //todo implement activity open
+                final int movieId = movieMain.getId();
+                Intent intent = new Intent(mContext, MovieDetailsActivity.class);
+                intent.putExtra(MovieDetailsActivity.MOVIE_ID, movieId);
+                mContext.startActivity(intent);
             }
         });
     }
